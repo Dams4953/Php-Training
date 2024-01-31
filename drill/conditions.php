@@ -123,6 +123,7 @@ if (isset($_GET['age']) && isset($_GET['genre'])) {
 
 
 // EXO 5
+/*
 if (isset($_GET['age']) && isset($_GET['genre']) && isset($_GET['langue'])) {
 
     $age = $_GET['age'];
@@ -210,5 +211,119 @@ if (isset($_GET['age']) && isset($_GET['genre']) && isset($_GET['langue'])) {
         <label for="non">non</label>
         <input type="radio" name="langue" value="non">
     </div>
+    <input type="submit" name="submit" value="valider">
+</form>
+*/
+
+/*
+// EXO 6
+if (isset($_GET["age"]) && isset($_GET["genre"]) && isset($_GET["nom"])) {
+
+    $age = $_GET["age"];
+    $genre = $_GET["genre"];
+    $nom = $_GET["nom"];
+
+    // accepté
+    if ($genre === "femme") {
+        if ($age >= 21 && $age < 40) {
+            echo "bienvenue dans l'équipe $nom !";
+        } else{
+            echo "Désolé, vous ne correspondez pas aux critères $nom";
+        }
+    }
+    // refus
+    if ($genre === "homme") {
+        echo "Désolé, vous ne correspondez pas aux critères $nom";
+    }
+}
+
+?>
+<form method="get" action="">
+    <div>
+        <label for="age">quel âge avez vous ? </label>
+        <input type="number" name="age">
+    </div>
+    <label for="femme">Femme</label>
+    <input type="radio" name="genre" value="femme">
+    <div>
+        <label for="homme">Homme</label>
+        <input type="radio" name="genre" value="homme">
+    </div>
+    <div>
+        <label for="nom">quel est votre nom ? </label>
+        <input type="text" name="nom" value="nom">
+    </div>
+    <input type="submit" name="submit" value="valider">
+</form>
+*/
+
+/*
+// EXO 7
+if (isset($_GET["age"]) && isset($_GET["genre"]) && isset($_GET["nom"])) {
+
+    $age = $_GET["age"];
+    $genre = $_GET["genre"];
+    $nom = $_GET["nom"];
+    $refus = "Désolé, vous ne correspondez pas aux critères $nom";
+
+    if ($genre === "femme" && $age >= 21 && $age < 40) {
+        echo "bienvenue dans l'équipe $nom !";
+    }
+
+    echo $refus;
+}
+
+?>
+<form method="get" action="">
+    <div>
+        <label for="age">quel âge avez-vous ? </label>
+        <input type="number" name="age">
+    </div>
+    <div>
+    <label for="femme">Femme</label>
+    <input type="radio" name="genre" value="femme">
+    </div>
+    <div>
+        <label for="homme">Homme</label>
+        <input type="radio" name="genre" value="homme">
+    </div>
+    <div>
+        <label for="nom">quel est votre nom ? </label>
+        <input type="text" name="nom" value="nom">
+    </div>
+    <input type="submit" name="submit" value="valider">
+</form>
+*/
+
+
+// EXO 8
+if (isset($_GET["note"])) {
+
+    $note = $_GET["note"];
+
+    if ($note <= 4) {
+        echo "Ce travail est vraiment mauvais. Quel gamin idiot !";
+    } else if ($note >= 5 && $note <= 9) {
+        echo "Ceci n'est pas suffisant. Il faut étudier davantage.";
+    } else if ($note == 10) {
+        echo "à peine assez !";
+    } else if ($note >= 11 && $note <= 14) {
+        echo "Pas mal !";
+    } else if ($note >= 15 && $note <= 18) {
+        echo "Bravo, bravissimo !";
+    } else if ($note >= 19 && $note <= 20) {
+        echo "Trop beau pour être vrai : affrontez le tricheur !";
+    } else {
+        echo "Il faut entrer une note valide";
+    }
+}
+
+?>
+<form method="get" action="">
+    <div>
+        <label for="note">note</label>
+        <input type="number" name="note">
+    </div>
+
     <input type="submit" name="submit" value="valider">
 </form>
