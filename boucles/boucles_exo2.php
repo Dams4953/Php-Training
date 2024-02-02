@@ -24,27 +24,22 @@ foreach($prenoms as $prenom) {
 */
 
 $pays = [
-    
-    'be' =>'belgique', 
-    'fr' => 'france', 
-    'pb' => 'pays-bas', 
-    'it' => 'italie', 
-    'es' => 'espagne', 
-    'ro' => 'roumanie', 
-    'no' => 'norevge'
+    'be' => 'Belgique', 
+    'fr' => 'France', 
+    'pb' => 'Pays-Bas', 
+    'it' => 'Italie', 
+    'es' => 'Espagne', 
+    'ro' => 'Roumanie', 
+    'no' => 'Norvège'
 ];
-
-
-
-
 ?>
 
 <form action="traitement.php" method="post">
-    <label for="pays">Sélectionnez un pays :</label>
     <select id="pays" name="pays">
         <?php
-        foreach ($pays as $payss)
-            echo '<option value="' . $pays . '">' . $payss . '</option>';
+        foreach ($pays as $ISO => $nomPays) {
+            echo '<option value="' . $$ISO  . '">' . $nomPays . '</option>';
+        }
         ?>
     </select>
 </form>
